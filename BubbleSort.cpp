@@ -27,18 +27,24 @@ int main()
     int i, j, temp;
     for (i = 0; i < size; i++)
     {
-        for (j = i + 1; j < size - 1; j++)
+        bool flag = false;
+        for (j = i + 1; j < size - i - 1; j++)
         {
-            if (array[j] < array[i])
+            if (array[j] > array[j + 1])
             {
-                temp = array[i];
-                array[i] = array[j];
+                flag = true;
+                temp = array[j + 1];
+                array[j + 1] = array[j];
                 array[j] = temp;
             }
         }
+        if (flag == false)
+        {
+            break;
+        }
     }
 
-    cout << "Sorted Array\n";
+    cout << "\nSorted Array\n";
     displayArray(array, size);
     return 0;
 }
