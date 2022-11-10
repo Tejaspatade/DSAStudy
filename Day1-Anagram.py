@@ -6,14 +6,15 @@ def anagramCheck(s, t):
         return False
 
     # Using HashMaps for both strings
-    hashMapS, hashMapT = {}
+    hashMapS, hashMapT = {}, {}
     for i in range(len(s)):
         hashMapS[s[i]] = hashMapS.get(s[i], 0) + 1
         hashMapT[t[i]] = hashMapT.get(t[i], 0) + 1
 
     # Check for character occurences in HashMaps
     for key in hashMapS:
-        if hashMapT[key] != hashMapS[key]:
+        if hashMapS[key] != hashMapT.get(key, 0):
             return False
 
+    # If both the HasMaps check out to be equal the strings are therefore anagrams.
     return True
