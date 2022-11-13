@@ -24,6 +24,7 @@ int main()
     displayArray(array, size);
 
     // Sorting -> Bubble Sort
+    // Most Efficient Possible Solution
     int i, j, temp;
     for (i = 0; i < size; i++)
     {
