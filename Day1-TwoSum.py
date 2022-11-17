@@ -8,7 +8,7 @@ def twoSumCheck(array, target):
 
         # Difference has to be in hashMap so that together current element & difference give us target
         if difference in hashMap:
-            return [hashMap[difference], hashMap[index]]
+            return [hashMap[difference], index]
 
         # If difference was absent in hashMap then we just add the current elem into hashMap
         hashMap[element] = index
