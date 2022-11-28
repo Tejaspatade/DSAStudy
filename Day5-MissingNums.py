@@ -24,7 +24,7 @@ class Solution:
         for index, num in enumerate(nums):
             # If num is positive, this indicates that it's index + 1 isn't in nums array
             if num > 0:
-                # Adding to output array
+                # Adding to output array2
                 output.append(index + 1)
         return output
         
