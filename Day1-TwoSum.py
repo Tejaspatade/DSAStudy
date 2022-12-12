@@ -14,3 +14,24 @@ def twoSumCheck(array, target):
         hashMap[element] = index
 
     return
+
+# Another Solution
+def twoSumCheck(array, target):
+    # Two pointers SC: O(1)
+    left = 0
+    right = len(array) - 1
+    # Sort Array TC: O(nlogn)
+    array.sort()
+    # Traverse Array with 2 pointers TC: O(n)
+    while left != right:
+        sum = array[left] + array[right]
+        # Found Target
+        if sum == target:
+            return[array[left], array[right]]
+        # Sum is smaller than target
+        if sum < target:
+            left += 1
+        # Sum is larger than target
+        else:
+            right -= 1
+    return
